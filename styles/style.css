@@ -1,0 +1,32 @@
+form {
+    width: 500px;
+    height: 350px;
+    margin: 5em auto;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 15px;
+}
+
+input {
+    margin: 1em;
+    padding: 1em;
+}
+
+label {
+    font-weight: bold;
+    font-style: italic;
+}
+
+h1 {
+    color: rgb(43, 124, 34);
+}
+
+#submit-button {
+    width: 200px;
+    padding: 0.75em 1em;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    background: rgb(0, 152, 0);
+    margin-top: 2em;
+}

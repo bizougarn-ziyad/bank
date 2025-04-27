@@ -1,0 +1,52 @@
+h1 {
+    text-align: center;
+    color: rgb(64, 177, 64);
+}
+
+.data {
+    width: 500px;
+    margin: 0 auto;
+    padding: 1em 2em;
+    border: 2px solid black;
+    border-radius: 15px;
+}
+
+h2 {
+    color: rgb(74, 47, 47);
+    font-weight: 900;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+span {
+    color: rgb(156, 136, 24);
+}
+
+.retrait,
+.virement,
+.deconnexion {
+    color: white;
+    background: rgb(52, 189, 52);
+    padding: 1em 1.25em;
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    border: none;
+    border-radius: 15px;
+    margin-bottom: 1em;
+    font-weight: 900;
+    font-size: 1.2em;
+}
+
+p {
+    text-align: center;
+}
+
+.virement {
+    background: rgb(28, 28, 106);
+}
+
+.deconnexion {
+    background: rgb(127, 36, 36);
+}
