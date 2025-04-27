@@ -15,7 +15,8 @@ while (($data = fgetcsv($myFile, 0, ',', '"', '\\')) !== FALSE) {
             if ($amount > 0 && $amount <= $user->getSolde()) {
                 $user->setSolde($user->getSolde() - $amount);
                 $userDes->setSolde($userDes->getSolde() + $amount);
-                header("Location: dashboard.php");
+                $success="Virement effectuer";
+                header("Location: dashboard.php?success=$success");
                 exit();
             } else {
                 $error="Solde insuffisant";

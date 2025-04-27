@@ -7,19 +7,23 @@
     <title>Login</title>
 </head>
 <body>
-    <form action="checkuser.php" method="post">
-        <h1>Login</h1>
+    <form action="checkuser.php" method="post" id="login-form">
+        <img id="icon-banque" src="..\imgs\icon-protection.png" alt="">
+        <h1 id="login-title">Customer Login</h1>
+        <p id="login-subtitle">Secure access to your bank account</p>
         <?php if (isset($_GET['error'])) { ?>
             <p style="color: red;"><?php echo $_GET['error']; ?></p>
         <?php } ?>
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username" ><br>
+        
+        <div class="form-group">
+            <input type="text" name="username" id="username" placeholder="Username">
+        </div>
 
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password" ><br>
+        <div class="form-group">
+            <input type="password" name="password" id="password" placeholder="Password">
+        </div>
 
         <input type="submit" id="submit-button" value="Login">
     </form>
-    
 </body>
 </html>
