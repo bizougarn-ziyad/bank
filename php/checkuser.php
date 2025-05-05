@@ -1,24 +1,24 @@
 <?php
-    session_start();
+    include 'dbh.php';
     include 'User.php';
+    session_start();
 
-if (!empty($_POST)){
     $loginUsername = $_POST['username'];
     $loginPassword = $_POST['password'];
 
-    $myFile = fopen("..\client.csv", "r");
-    $error="Username or password is incorrect";
-    while (($data = fgetcsv($myFile, 0, ',', '"', '\\')) !== FALSE) {
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username AND pwd = :password");
+    $stmt->execute(['username' => $loginUsername, 'password' => $loginPassword]);
 
-        if($data[0] == $loginUsername && $data[3] == $loginPassword){
-          
-            $user = new User($data[0], $data[1], $data[2], $data[3], $data[4]);
-            $_SESSION['user'] = $user;
-            header("Location: dashboard.php");
-            exit();
-        }
+    if ($stmt->rowCount() > 0) {
+        $row = $stmt->fetch();
+        $user = new User($row['username'], $row['nom'], $row['prenom'], $row['pwd'], $row['solde'], $row['image'], $row['account_number']);
+        $_SESSION['user'] = $user;
+        $_SESSION["login"]="true";
+        header("Location: dashboard.php");
+    } else {
+        $error= "Invalid username or password";
+        header("Location: loginpage.php?error=$error");
     }
-    fclose($myFile);
-    header("Location: loginpage.php?error=$error");
-    exit();
-}
+
+    $pdo = null;
+?>

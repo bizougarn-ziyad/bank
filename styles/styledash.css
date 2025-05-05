@@ -10,7 +10,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
     background-color: var(--dark-color);
     color: var(--light-color);
     min-height: 91vh;
@@ -24,7 +24,7 @@ body {
 h1 {
     text-align: center;
     font-size: 2.5rem;
-    margin-bottom: 1.5em;
+    margin-bottom: .75em;
     background: var(--gradient);
     -webkit-background-clip: text;
     background-clip: text;
@@ -139,7 +139,7 @@ button:active {
 
 p[style="color: red;"] {
     background: rgba(255, 107, 107, 0.1);
-    width: 45%;
+    width: 640px;
     margin: 0 auto;
     padding: 12px;
     border-radius: 8px;
@@ -155,7 +155,7 @@ p[style="color: red;"] {
 
 p[style="color: green;"] {
     background: rgba(74, 222, 128, 0.1);
-    width: 45%;
+    width: 640px;
     margin: 0 auto;
     padding: 12px;
     border-radius: 8px;
@@ -184,4 +184,98 @@ p[style="color: green;"] {
     80% {
         transform: translateX(5px);
     }
+}
+
+
+#profilepicture {
+    width: 80px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+}
+
+
+.dropdown {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.transactions-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+}
+
+.dropdown-content {
+    display: none;
+    position: relative;
+    width: 100%;
+    max-height: 150px;
+    margin-top: 10px;
+    border-radius: 8px;
+    color: var(--light-color);
+    background: rgb(255, 255, 255);
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+.dropdown-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.dropdown-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.dropdown-content::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+
+.dropdown-content p {
+    padding: 0 1em;
+    color: black !important;
+}
+
+.transaction-item {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    min-height: 120px;
+    scroll-snap-align: start;
+    background: rgb(255, 255, 255);
+}
+
+.transaction-item:last-child {
+    border-bottom: none;
+}
+
+.transaction-item p {
+    margin: 8px 0;
+    color: var(--light-color);
+    line-height: 1.4;
+}
+
+
+.dropdown-content.active {
+    display: block;
+}
+
+.transactions-btn {
+    transition: transform 0.1s ease;
+}
+
+.transactions-btn:active {
+    transform: scale(0.98);
 }

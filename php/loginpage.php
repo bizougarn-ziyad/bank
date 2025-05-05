@@ -1,9 +1,20 @@
+<?php 
+    session_start();
+    if(isset($_SESSION["login"]) && $_SESSION["login"]=="true"){
+        header("Location: dashboard.php");
+        exit();
+    }
+    $_SESSION["login"]="false";
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="..\styles\style.css">
+    <link rel="stylesheet" href="../styles/stylelogin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <title>Login</title>
 </head>
 <body>
@@ -16,11 +27,15 @@
         <?php } ?>
         
         <div class="form-group">
-            <input type="text" name="username" id="username" placeholder="Username">
+            <input type="text" name="username" id="username" placeholder="Username" autocomplete="off">
         </div>
 
         <div class="form-group">
             <input type="password" name="password" id="password" placeholder="Password">
+        </div>
+
+        <div class="sign-up">
+            <p id="sign-up-message">Don't have an account? &nbsp;<a href="signuppage.php">Sign up</a></p>
         </div>
 
         <input type="submit" id="submit-button" value="Login">

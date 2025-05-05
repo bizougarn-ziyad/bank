@@ -10,7 +10,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
     background-color: var(--dark-color);
     display: flex;
     justify-content: center;
@@ -105,7 +105,7 @@ body {
 #username:focus,
 #password:focus {
     outline: none;
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: rgba(100, 100, 100, 0.15);
     border-left: 3px solid var(--primary-color);
     box-shadow: 0 0 0 2px rgba(110, 69, 226, 0.3);
 }
@@ -190,10 +190,11 @@ p[style="color: red;"]::before {
     }
 }
 
-/* LOGIN PAGE */
+#sign-up-message {
+    color: #ffffff !important;
+}
 
-
-/* DASHBOARD PAGE */
-
-
-/* DASHBOARD PAGE */
+#sign-up-message a {
+    color: #7dabff !important;
+    font-weight: bold;
+}
