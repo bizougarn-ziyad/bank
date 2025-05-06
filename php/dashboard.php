@@ -25,8 +25,8 @@
         $query = "SELECT image FROM users WHERE username = :username";
         $stmt = $pdo->prepare($query);
         $stmt->execute(['username' => $user->getUsername()]);
-        $image_path = $stmt->fetchColumn();
-        echo $image_path;
+        $imageData = $stmt->fetchColumn();
+        echo "data:image/jpeg;base64," . base64_encode($imageData);
     ?>" alt="Profile picture" id="profilepicture">
         <h1>Welcome, <?= $user->getUsername() ?>!</h1>
     
