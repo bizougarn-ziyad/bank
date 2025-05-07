@@ -1,6 +1,5 @@
 <?php 
     require 'User.php';
-    require 'operation.php';
     include_once 'dbh.php';
     session_start();
     if(!isset($_SESSION["login"]) || $_SESSION["login"]=="false"){

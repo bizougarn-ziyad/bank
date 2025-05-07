@@ -1,6 +1,5 @@
 <?php
 require 'User.php';
-require 'operation.php';
 require 'dbh.php';
 session_start();
 $user = $_SESSION['user'];
